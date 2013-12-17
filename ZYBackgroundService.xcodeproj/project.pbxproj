@@ -19,6 +19,9 @@
 		3BC049D0185AD7DF00112635 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC049B8185AD7DF00112635 /* UIKit.framework */; };
 		3BC049D8185AD7E000112635 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BC049D6185AD7E000112635 /* InfoPlist.strings */; };
 		3BC049DA185AD7E000112635 /* ZYBackgroundServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC049D9185AD7E000112635 /* ZYBackgroundServiceTests.m */; };
+		3BC049E6185AD82100112635 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC049E4185AD82100112635 /* MainViewController.m */; };
+		3BC049E7185AD82100112635 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC049E5185AD82100112635 /* MainViewController.xib */; };
+		3BC049F0185AFABA00112635 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC049EF185AFABA00112635 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,12 @@
 		3BC049D5185AD7E000112635 /* ZYBackgroundServiceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZYBackgroundServiceTests-Info.plist"; sourceTree = "<group>"; };
 		3BC049D7185AD7E000112635 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3BC049D9185AD7E000112635 /* ZYBackgroundServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYBackgroundServiceTests.m; sourceTree = "<group>"; };
+		3BC049E3185AD82100112635 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		3BC049E4185AD82100112635 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3BC049E5185AD82100112635 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		3BC049EB185AFA1600112635 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3BC049ED185AFA8900112635 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		3BC049EF185AFABA00112635 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BC049F0185AFABA00112635 /* AVFoundation.framework in Frameworks */,
 				3BC049B7185AD7DF00112635 /* CoreGraphics.framework in Frameworks */,
 				3BC049B9185AD7DF00112635 /* UIKit.framework in Frameworks */,
 				3BC049B5185AD7DF00112635 /* Foundation.framework in Frameworks */,
@@ -96,6 +106,9 @@
 		3BC049B3185AD7DF00112635 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BC049EF185AFABA00112635 /* AVFoundation.framework */,
+				3BC049ED185AFA8900112635 /* MediaPlayer.framework */,
+				3BC049EB185AFA1600112635 /* AudioToolbox.framework */,
 				3BC049B4185AD7DF00112635 /* Foundation.framework */,
 				3BC049B6185AD7DF00112635 /* CoreGraphics.framework */,
 				3BC049B8185AD7DF00112635 /* UIKit.framework */,
@@ -111,6 +124,9 @@
 				3BC049C4185AD7DF00112635 /* ZYBackgroundServiceAppDelegate.m */,
 				3BC049C6185AD7DF00112635 /* Images.xcassets */,
 				3BC049BB185AD7DF00112635 /* Supporting Files */,
+				3BC049E3185AD82100112635 /* MainViewController.h */,
+				3BC049E4185AD82100112635 /* MainViewController.m */,
+				3BC049E5185AD82100112635 /* MainViewController.xib */,
 			);
 			path = ZYBackgroundService;
 			sourceTree = "<group>";
@@ -221,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BC049BF185AD7DF00112635 /* InfoPlist.strings in Resources */,
+				3BC049E7185AD82100112635 /* MainViewController.xib in Resources */,
 				3BC049C7185AD7DF00112635 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BC049C5185AD7DF00112635 /* ZYBackgroundServiceAppDelegate.m in Sources */,
+				3BC049E6185AD82100112635 /* MainViewController.m in Sources */,
 				3BC049C1185AD7DF00112635 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

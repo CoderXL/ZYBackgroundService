@@ -7,6 +7,7 @@
 //
 
 #import "ZYBackgroundServiceAppDelegate.h"
+#import "MainViewController.h"
 
 @implementation ZYBackgroundServiceAppDelegate
 
@@ -15,8 +16,33 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    //初始化
+    MainViewController *mainViewController = [[MainViewController alloc]initWithNibName:@"MainViewController" bundle:Nil];
+    mainViewController.title = @"后台下载测试Demo";
+    UINavigationController *rootNav = [[UINavigationController alloc]initWithRootViewController:mainViewController];
+    self.window.rootViewController = rootNav;
+    
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier
+  completionHandler:(void (^)())completionHandler {
+    self.backgroundSessionCompletionHandler = completionHandler;
+    //添加本地通知
+    [self presentNotification];
+}
+
+-(void)presentNotification{
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.alertBody = @"下载完成!";
+    localNotification.alertAction = @"后台传输下载已完成!";
+    //提示音
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    //icon提示加1
+    localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -39,6 +65,9 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    application.applicationIconBadgeNumber = 0;
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
